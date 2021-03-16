@@ -40,3 +40,15 @@ print(type(tuplaNoCambia))
 print(type(diccionario))
 print(type(rango))
 print(type(dato_byte))
+
+#Cambiar de tipos de dato
+
+texto = "Hola soy un texto"
+numerito = 776
+print(texto + " " + str(numerito))
+
+numero_entero = int(numerito)
+numero_float = float(numerito)
+
+print(numero_entero)
+print(numero_float)

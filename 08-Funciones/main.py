@@ -145,6 +145,16 @@ def devuelveTodo(nombre, apellidos):
 print(devuelveTodo('William', 'Paredes'))
 
 
+#Ejemplo No. 8 Funcion lambda (funciones anonimas)
+
+print('\n #####EJEMPLO 8 #######')
+dime_el_year = lambda year: f'El año es {year + 50}'
+
+print(dime_el_year(2034))
+
+
+
+
 
 
 

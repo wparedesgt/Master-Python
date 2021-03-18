@@ -10,5 +10,10 @@ de 8 numeros enteros y haga lo siguiente:
 """
 
 lista1 = list(range(1,9))
+numeros = [15,24,19,28,20,33,16,25]
 
-print(type(lista1))
+print(numeros)
+print(numeros.sort)
+print(len(numeros))
+
+

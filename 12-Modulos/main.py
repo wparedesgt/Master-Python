@@ -49,4 +49,23 @@ print(f"Mi fecha personalizada: {fecha_personalizada}")
 
 print(datetime.datetime.now().timestamp())
 
+#Modulo de Matematicas
+
+import math
+
+print(f"Raiz cuadrada de 10: {math.sqrt(10)}")
+print("Numero pi: ", float(math.pi))
+print("Redondear: ", math.ceil(6.56798))
+print("Redondear: ", math.floor(6.56798))
+
+#Modulo random 
+
+import random
+
+print("Numero Aleatorio entre 15 y 67: ", random.randint(15,67))
+
+
+
+
+
 

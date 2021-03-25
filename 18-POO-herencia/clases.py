@@ -10,7 +10,7 @@ class Persona:
     """
     def getNombre(self):
         return self.nombre
-        
+
     def getApellidos(self):
         return self.apellidos
 
@@ -66,6 +66,17 @@ class Informatico(Persona):
     
 
     
+class TecnioRedes(Informatico):
+
+    def __init__(self):
+        super().__init__()
+        self.auditarRedes = 'experto'
+        self.experienciaRedes = 15
+    
+    def auditoria(self):
+        return "Estoy auditando una red"
+
+
 
     
 

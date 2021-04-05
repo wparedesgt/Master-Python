@@ -31,10 +31,20 @@ conexion.commit()
 
 ##Borrar Registros
 
-cursor.execute("Delete from productos;")
-conexion.commit()
+#cursor.execute("Delete from productos;")
+#conexion.commit()
 
+#Insertar varios registros
 
+productos = [
+    ("Laptop", "Buen PC", 700),
+    ("Telefono Movil", "Buen Telefono", 140),
+    ("Motherboard", "Seagate MB", 80),
+    ("Tablet 15", "Samsung TB 15", 190),
+    ("Pc Escritorio", "Termaltek", 1200)
+]
+
+cursor.executemany("Insert into productos values(null, ?,? )")
 
 
 #Lectura de datos

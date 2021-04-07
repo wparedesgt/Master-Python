@@ -7,34 +7,25 @@ Proyecto Python y MySql:
 - Crear nota, mostrar notas, borrarlas.
 """
 
+from usuarios import acciones
+
 print("""
 Acciones disponibles:
     - registro 
     - login
 """)
 
+hazEl = acciones.Acciones()
+
 accion = input("Que quieres hacer?: ")
 
 if accion == "registro":
-    print("\n Ok!! Vamos a registrarte en el sistema...")
-    nombre = input("Cual es tu Nombre?: ")
-    apellidos = input("Cuales son tus apellidos?: ")
-    email = input("Introduce tu emaiil: ")
-    password = input("Introduce tu contraseña: ")
+    hazEl.registro()
 
 elif accion == "login":
-    print("\n Identificate en el sistema...")    
-    email = input("Introduce tu emaiil: ")
-    password = input("Introduce tu contraseña: ")
+    hazEl.login()
 
 import mysql.connector
 
-#Conectar a base de datos
 
-database = mysql.connector.connect(
-    host = "localhost",
-    user = "root",
-    password = "W1ll1@m2021",
-    database = "master_python" 
-)
 

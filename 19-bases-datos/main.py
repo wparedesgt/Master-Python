@@ -5,9 +5,10 @@ import mysql.connector
 database = mysql.connector.connect(
     host = "localhost",
     user = "root",
-    password = "", 
-    database = "master_python"
+    password = "W1ll1@m2021",
+    database = "master_python" 
 )
+
 
 #print(database)
 
@@ -16,7 +17,7 @@ cursor = database.cursor(buffered=True)
 
 #Crear bases de datos
 
-"""
+
 cursor.execute("Create database if not exists master_python;")
 cursor.execute("Show databases;")
 
@@ -24,7 +25,7 @@ cursor.execute("Show databases;")
 for bd in cursor:
     print(bd)
 
-"""
+
 #Crear tablas
 
 cursor.execute("""
@@ -48,7 +49,7 @@ for tables in cursor:
 
 #cursor.execute("INSERT INTO vehiculos VALUES(null, 'Mercedes', 'C500', 65000)")
 
-"""
+
 carros = [
     ('BMW', '328i', 40000),
     ('Ford', 'F150', 65000),
@@ -63,7 +64,6 @@ cursor.executemany("INSERT INTO vehiculos VALUES(null, %s, %s, %s)", carros)
 
 database.commit()
 
-"""
 
 #Sacar los datos de una tabla
 
@@ -82,3 +82,4 @@ cursor.execute("UPDATE vehiculos SET modelo = '328i' where marca = 'BMW' ")
 database.commit()
 
 print(cursor.rowcount, "Actualizados !!!!!")
+

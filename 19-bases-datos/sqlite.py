@@ -10,11 +10,15 @@ cursor = conexion.cursor()
 
 #Crear tabla
 
-cursor.execute("CREATE TABLE IF NOT EXISTS  productos(" +
-"id INTEGER PRIMARY KEY autoincrement, " +
-"titulo VARCHAR(255), "  +
-"descripcion TEXT, "  +
-"precio int(255)" + ")")
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS  productos(
+    id INTEGER PRIMARY KEY autoincrement, 
+    titulo VARCHAR(255), 
+    descripcion TEXT, 
+    precio int(255) 
+)
+""")
+
 
 #Guardar Cambios
 
@@ -44,16 +48,20 @@ productos = [
     ("Pc Escritorio", "Termaltek", 1200)
 ]
 
-cursor.executemany("Insert into productos values(null, ?,? )")
+cursor.executemany("Insert into productos values(null, ?,?,?)", productos)
+conexion.commit()
+
+
 
 
 #Lectura de datos
 
-cursor.execute("select * from productos;")
+cursor.execute("select * from productos where precio >= 100;")
 
 productos = cursor.fetchall()
 
 for producto in productos:
+    print("ID:", producto[0])
     print("Titulo: ",  producto[1])
     print("Descripcion: ",   producto[2])
     print("Precio: ", producto[3])

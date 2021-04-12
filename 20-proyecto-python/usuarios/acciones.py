@@ -28,15 +28,16 @@ class Acciones:
             login = usuario.identificar()
 
             if email == login[3]:
-                print(f"n\ Bienvenido {login[1]}, te has registrado en el sistema el: {login[5]} ")
-                self.proximasAcciones(login)
+                print(f"n/ Bienvenido {login[1]}, te has registrado en el sistema el: {login[5]} ")
+                proximasAcciones("david")
+
 
         except Exception as e:
-            #print(type(e))
-            #print(type(e).__name__)
+            print(type(e))
+            print(type(e).__name__)
             print(f"Login Incorrecto !!!!")
 
-def proximasAcciones(self, usuario):
+def proximasAcciones(self, usuario):  #(self, usuario):
     print("""
     Acciones disponibles:
     - Crear nota (crear)

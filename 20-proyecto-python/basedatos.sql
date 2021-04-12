@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS master_python;
 use master_python;
 
-CREATE TABLE usarios(
+CREATE TABLE usuarios(
     id int(25) auto_increment not null, 
     nombre varchar(100), 
     apellidos varchar(255), 

@@ -22,7 +22,7 @@ class Acciones:
 
         try:
 
-            email = input("Introduce tu emaiil: ")
+            email = input("Introduce tu email: ")
             password = input("Introduce tu contraseña: ")
             usuario = modelo.Usuario('', '', email, password)
             login = usuario.identificar()
@@ -49,11 +49,15 @@ class Acciones:
 
         if accion == "crear":
             print("Vamos a Crear")
+            self.proximasAcciones(usuario)
         elif accion == "mostrar":
             print("Vamos a Mostrar")
+            self.proximasAcciones(usuario)
         elif accion == "eliminar":
             print("Vamos a Eliminar")
+            self.proximasAcciones(usuario)
         elif accion == "salir":
+            print(f"Ok {usuario[1]}, hasta pronto")
             exit()
 
   

@@ -2,7 +2,9 @@ import usuarios.usuario as modelo
 import notas.acciones
 
 
-class Acciones:return True
+class Acciones:
+
+    def registro(self):
         print("\n Ok!! Vamos a registrarte en el sistema...")
         nombre = input("Cual es tu Nombre?: ")
         apellidos = input("Cuales son tus apellidos?: ")
@@ -18,8 +20,8 @@ class Acciones:return True
             print("n\ No te ha registrado correctamente!!!")
 
     def login(self):
-        print("\n Identificate en el sistema...")    
-
+        print("Identificate en el sistema...")
+        
         try:
 
             email = input("Introduce tu email: ")
@@ -53,7 +55,8 @@ class Acciones:return True
             
             self.proximasAcciones(usuario)
         elif accion == "mostrar":
-            print("Vamos a Mostrar")
+            hasEl.mostrar(usuario)
+                        
             self.proximasAcciones(usuario)
         elif accion == "eliminar":
             print("Vamos a Eliminar")

@@ -1,8 +1,8 @@
 import usuarios.usuario as modelo
+import notas.acciones
 
-class Acciones:
 
-    def registro(self):
+class Acciones:return True
         print("\n Ok!! Vamos a registrarte en el sistema...")
         nombre = input("Cual es tu Nombre?: ")
         apellidos = input("Cuales son tus apellidos?: ")
@@ -46,9 +46,11 @@ class Acciones:
         - Salir (salir)
         """)
         accion = input("Que quieres hacer?: ")
+        hasEl = notas.acciones.Acciones()
 
         if accion == "crear":
-            print("Vamos a Crear")
+            hasEl.crear(usuario)
+            
             self.proximasAcciones(usuario)
         elif accion == "mostrar":
             print("Vamos a Mostrar")

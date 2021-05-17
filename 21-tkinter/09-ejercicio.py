@@ -16,6 +16,38 @@ ventana.config(
     bd=25
 )
 
+def CFloat(numero):
+    try:
+        result = float(numero)
+    except:
+        result = 0
+        messagebox.showerror("Error", "Inroduce Números")
+    return result
+
+
+def sumar():
+        resultado.set(CFloat(Numero1.get()) + CFloat(Numero2.get()))
+        mostrarresultado()
+    
+
+def restar():
+        resultado.set(CFloat(Numero1.get()) - CFloat(Numero2.get()))
+        mostrarresultado()
+    
+def multiplicar():
+        resultado.set(CFloat(Numero1.get()) * CFloat(Numero2.get()))
+        mostrarresultado()
+    
+def dividir():
+        resultado.set(CFloat(Numero1.get()) / CFloat(Numero2.get()))
+        mostrarresultado()
+    
+def mostrarresultado():
+    messagebox.showinfo("Resultado", f"El resultado de la operacion es : {resultado.get()}")
+    Numero1.set("")
+    Numero2.set("")
+
+
 Numero1 = StringVar()
 Numero2 = StringVar()
 resultado = StringVar()
@@ -40,9 +72,9 @@ Entry(marco, textvariable=Numero2, justify="center").pack()
 
 Label(marco, text="").pack()
 
-Button(marco, text="Sumar").pack(side="left", fill= X, expand=YES)
-Button(marco, text="Restar").pack(side="left",fill= X, expand=YES)
-Button(marco, text="Multiplicar").pack(side="left", fill= X, expand=YES)
-Button(marco, text="Dividir").pack(side="left", fill= X, expand=YES)
+Button(marco, text="Sumar", command=sumar).pack(side="left", fill= X, expand=YES)
+Button(marco, text="Restar", command=restar).pack(side="left",fill= X, expand=YES)
+Button(marco, text="Multiplicar", command=multiplicar).pack(side="left", fill= X, expand=YES)
+Button(marco, text="Dividir", command=dividir).pack(side="left", fill= X, expand=YES)
 
 ventana.mainloop()

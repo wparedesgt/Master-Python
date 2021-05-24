@@ -7,16 +7,18 @@ Crear una programa que contenga:
 -Un Menu (Inicio, Añadir, Informacion, Salir) (hecho)
 -Diferentes Pantallas (Hecho)
 -Formulario de Añadir Productos (Hecho)
--Guardar datos temporalmente
+-Guardar datos temporalmente (Hecho)
 -Listar datos en pantalla principal
 -Opcion de Salir (Hecho)
 
 """
 from tkinter import *
+from tkinter import ttk
 
 #Definir la ventana
 ventana = Tk()
-ventana.geometry("500x500")
+#ventana.geometry("500x500")
+ventana.minsize(500,500)
 ventana.title("Proyecto Master en Python")
 ventana.resizable(0,0)
 
@@ -32,7 +34,24 @@ def home():
         pady=20
     )
     home_label.grid(row=0,column=0)
+    products_box.grid(row=1)
     
+    #listar Productos
+
+    #for product in products:
+    #    if len(product) == 3:
+    #        product.append("added")
+    #        Label(products_box, text=product[0]).grid()
+    #        Label(products_box, text=product[1]).grid()
+    #        Label(products_box, text=product[2]).grid()
+    #        Label(products_box, text="----------").grid()
+
+    for product in products:
+        if len(product) == 3:
+            product.append("added")
+            products_table.insert('', 0, text= product[0], values=product[1])
+
+
     #Ocultar otras pantallas
     add_frame.grid_remove()
     add_label.grid_remove()
@@ -80,6 +99,7 @@ def add():
     )
 
     #Ocultar otras pantallas
+    products_box.grid_remove()
     home_label.grid_remove()
     info_label.grid_remove()
     data_label.grid_remove()
@@ -96,20 +116,43 @@ def info():
     info_label.grid(row=0,column=0)
     data_label.grid(row=1,column=0)
     #Ocultar otras pantallas
+    products_box.grid_remove()
     add_frame.grid_remove()
     home_label.grid_remove()
     add_label.grid_remove()
     data_label.grid_remove()
     return True
 
+
+
+def add_product():
+    products.append([
+        name_data.get(),
+        price_data.get(),
+        add_decription_entry.get("1.0", "end-1c")
+
+    ])
+    name_data.set("")
+    price_data.set("")
+    add_decription_entry.delete("1.0", END)
+    home()
+
 #Variables Importantes
 
+products = []
 name_data = StringVar()
 price_data = StringVar()
 
 
 #Definir Campos de Pantalla (INICIO)
 home_label = Label(ventana, text="Inicio")
+products_box = Frame(ventana, width=250)
+Label(products_box).grid(row=0)
+products_table = ttk.Treeview(height=12, columns=2)
+products_table.grid(row=1, column=0, columnspan=2)
+products_table.heading("#0", text= 'Producto', anchor = W)
+products_table.heading("#1", text= 'Precio', anchor = W)
+
 
 #Definir Campos de Pantalla (Añadir Producto)
 add_label = Label(ventana, text="Añadir Producto")
@@ -128,7 +171,7 @@ add_decription_entry = Text(add_frame)
 
 add_separator = Label(add_frame)
 
-boton = Button(add_frame, text="Guardar")
+boton = Button(add_frame, text="Guardar", command=add_product)
 
 
 #Definir Campos de Pantalla (Informacion)

@@ -5,5 +5,10 @@ from django.shortcuts import render, HttpResponse
 #MVT = Modelo Template Vista -> (metoros) En djando el template es la vista y la vista el cotrolador
 
 def hola_mundo(request):
-    return HttpResponse("Hola mundo con django!!!!")
+    return HttpResponse(
+        """
+        <h1>Hola mundo con Django!!!</h1>
+        <h3>Soy William Paredes</h3>
+        """
+    )
 

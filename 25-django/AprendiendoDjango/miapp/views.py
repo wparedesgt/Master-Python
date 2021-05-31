@@ -61,3 +61,7 @@ def pagina(request):
         """
     )
 
+def contacto(request, nombre, apellidos):
+    return HttpResponse(layout+f"<h2>Contacto {nombre} {apellidos}</h2>")
+    
+

@@ -6,31 +6,14 @@ from django.shortcuts import render, HttpResponse , redirect
 
 layout = """
 
-<h1>Sitio web Django | William Paredes</h1>
 
-<hr/>
-
-<ul>
-    <li>
-        <a href="/inicio">Inicio</a>
-    </li>
-    <li>
-        <a href="/hola-mundo">Hola Mundo</a>
-    </li>
-        <a href="/pagina-pruebas">Pagina de Pruebas</a>
-    </li>
-    <li>
-        <a href="/contacto">Contacto</a>
-    </li>
-
-</ul>
-<hr/>
 """
 
 def index(request):
 
     html = """
-            
+            <h1>Inicio</h1>
+            <p>Años hasta el 2050:</p>
             <ul>
             """
     year = 2021
@@ -45,27 +28,18 @@ def index(request):
     html += "</u>"
 
 
-    return HttpResponse(layout+html)
+    return render(request, 'index.html')
 
 def hola_mundo(request):
-    return HttpResponse(layout+
-        """
-        <h1>Hola mundo con Django!!!</h1>
-        <h3>Soy William Paredes</h3>
-        """
-    )
+    return render(request, 'hola_mundo.html')
+    
 
 def pagina(request, redirigir = 0):
 
     if redirigir == 1:
         return redirect('contacto', nombre = "William", apellidos = "Paredes")
 
-    return HttpResponse(layout+
-        """
-        <h1>Pagina de mi web</h1>
-        <p>Creado por William Paredes</p>
-        """
-    )
+    return render(request, 'pagina.html')
 
 def contacto(request, nombre="", apellidos=""):
     html = ""

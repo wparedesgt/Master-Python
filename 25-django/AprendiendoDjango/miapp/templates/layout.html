@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {% block title %}
+        <!--Titulo de cada pagina en concreto-->
+        {% endblock %}
+        | William Paredes
+    </title>
+</head>
+
+<body>
+    <h1>Sitio web Django | William Paredes</h1>
+
+    <hr />
+
+    <ul>
+        <li>
+            <a href="/inicio">Inicio</a>
+        </li>
+        <li>
+            <a href="/hola-mundo">Hola Mundo</a>
+        </li>
+        <a href="/pagina-pruebas">Pagina de Pruebas</a>
+        </li>
+        <li>
+            <a href="/contacto">Contacto</a>
+        </li>
+
+    </ul>
+    <hr />
+    <div id="content">
+        {% block content %}
+        <strong>Contenido del Bloque Original!!!</strong>
+        <!--Codigo que biene de templates-->
+
+        {% endblock %}
+
+    </div>
+    <hr />
+    <footer>Master en Python &copy; William V. Paredes</footer>
+</body>
+
+</html>

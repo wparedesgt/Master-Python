@@ -1,4 +1,30 @@
+/* Estilos Generales */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
 body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: red;
+    background-color: #f2f2f2;
+}
+
+/*Estilos a la cabecera*/
+
+header{
+    width: 1212px;
+    height: 140px;
+    background-color: #23282b;
+    margin: 0px auto;
+}
+
+#logotipo h1{
+    display: block;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #42a096;
+    
 }

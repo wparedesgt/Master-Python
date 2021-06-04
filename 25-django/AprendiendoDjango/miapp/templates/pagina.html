@@ -5,6 +5,15 @@
 {% block content%}
 
 <h1 class="title">Pagina de mi web</h1>
-<p>Creado por William Paredes</p>
+<p>{{"Creado por William Paredes"}}</p>
+</br>
+<p>{{texto|default:"No hay nada"}}</p>
 
+</br>
+<p>{{lista|last}}</p>
+<p>{{lista|join:', '}}</p>
+<p>{{lista|length}}</p>
+<p>{{"texto de prueba"|upper}}</p>
+<p>{{"texto de prueba"|lower}}</p>
+<p>{{"William Paredes"|saludo}}
 {% endblock %}

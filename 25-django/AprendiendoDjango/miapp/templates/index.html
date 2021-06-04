@@ -4,6 +4,7 @@
 
 {% block content%}
 
+
 {% comment "Esto es un comentario" %}
 <h1>Ejemplo de comentario que no se renderiza</h1>
 {% endcomment %}
@@ -32,16 +33,8 @@
     {%endfor%}
 </ul>
 
-<p>Años hasta el 2050:</p>
-<ul>
-    {%for year in years%}
-        {%if year|divisibleby:2 == True%}
-            <li>
-                {{year}}
-            </li>
-        {%endif%}
-    {%endfor%}
-</ul>
 
+
+{% include 'fecha_actual.html' with saludo="Hola mundo desde plantilla" %}
 
 {% endblock %}

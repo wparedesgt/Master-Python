@@ -28,16 +28,16 @@
     <nav>
         <ul>
             <li>
-                <a href="/inicio">Inicio</a>
+                <a href="{% url 'index'%}">Inicio</a>
             </li>
             <li>
-                <a href="/hola-mundo">Hola Mundo</a>
+                <a href="{% url 'hola_mundo'%}">Hola Mundo</a>
             </li>
             <li>
-                <a href="/pagina-pruebas">Pagina de Pruebas</a>
+                <a href="{% url 'pagina'%}">Pagina de Pruebas</a>
             </li>
-            <li>
-                <a href="/contacto">Contacto</a>
+            <li> 
+                <a href="{% url 'contacto' 'William' 'Paredes'%}">Contacto</a>
             </li>
 
         </ul>
@@ -65,7 +65,9 @@
 
     </div>
 
-    <footer>Master en Python &copy; William V. Paredes</footer>
+    <footer>
+    Master en Python &copy; William V. Paredes - {%now "Y"%} 
+    </footer>
 </body>
 
 </html>

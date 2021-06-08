@@ -29,7 +29,8 @@ urlpatterns = [
     path('pagina-pruebas/<int:redirigir>', miapp.views.pagina, name="pagina"),
     path('contacto/', miapp.views.contacto, name="contacto"),
     path('contacto/<str:nombre>/', miapp.views.contacto, name="contacto"),
-    path('contacto/<str:nombre>/<str:apellidos>', miapp.views.contacto, name="contacto")
+    path('contacto/<str:nombre>/<str:apellidos>', miapp.views.contacto, name="contacto"),
+    path('crear-articulo/', miapp.views.crear_articulo, name='crear_articulo'),
 ]
 
 

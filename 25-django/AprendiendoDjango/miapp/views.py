@@ -64,5 +64,11 @@ def contacto(request, nombre="", apellidos=""):
         html += f"<h3>{nombre} {apellidos}</h3>"
 
     return HttpResponse(layout+f"<h2>Contacto</h2>"+html)
+
+def crear_articulo(request):
+    
+    return HttpResponse("Articulo Creado")
+
+
     
 

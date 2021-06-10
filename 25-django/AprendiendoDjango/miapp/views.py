@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse , redirect
+from miapp.models import Article, Category
 
 # Create your views here.
 #MVC = Modelo Vista Controlador -> (metodos)
@@ -66,7 +67,13 @@ def contacto(request, nombre="", apellidos=""):
     return HttpResponse(layout+f"<h2>Contacto</h2>"+html)
 
 def crear_articulo(request):
-    
+    articulo = Article(
+        title = 'Primer Articulo',
+        content = 'Contenido del Articulo',
+        public = True
+    )
+
+    articulo.save()
     return HttpResponse("Articulo Creado")
 
 

@@ -66,15 +66,16 @@ def contacto(request, nombre="", apellidos=""):
 
     return HttpResponse(layout+f"<h2>Contacto</h2>"+html)
 
-def crear_articulo(request):
+def crear_articulo(request, title, content, public):
     articulo = Article(
-        title = 'Primer Articulo',
-        content = 'Contenido del Articulo',
-        public = True
+        title = title,
+        content = content,
+        public = public
     )
 
     articulo.save()
-    return HttpResponse("Articulo Creado")
+    return HttpResponse(f"Articulo Creado: <strong> {articulo.title} </strong> - {articulo.content}")
+
 
 
     

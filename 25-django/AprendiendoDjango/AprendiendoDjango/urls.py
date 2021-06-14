@@ -30,7 +30,7 @@ urlpatterns = [
     path('contacto/', miapp.views.contacto, name="contacto"),
     path('contacto/<str:nombre>/', miapp.views.contacto, name="contacto"),
     path('contacto/<str:nombre>/<str:apellidos>', miapp.views.contacto, name="contacto"),
-    path('crear-articulo/', miapp.views.crear_articulo, name='crear_articulo'),
+    path('crear-articulo/<str:title>/<str:content>/<str:public>', miapp.views.crear_articulo, name='crear_articulo'),
 ]
 
 

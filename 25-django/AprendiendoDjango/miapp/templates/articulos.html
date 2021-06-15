@@ -8,7 +8,15 @@
 
     <ul>
         {%for articulo in articulos%}
-        <li>{{articulo.id}}.{{articulo.title}} </li>
+        <li>
+            <h4>{{articulo.id}}.{{articulo.title}}</h4>
+            <span>{{articulo.created_at}}</span>
+            <p>
+                {{articulo.content}}
+                <a href="{% url 'borrar' id=articulo.id%}">Eliminar</a>
+            </p> 
+        </li>
+        
 
         {% endfor %}
     </ul>

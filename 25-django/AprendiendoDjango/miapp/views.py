@@ -99,15 +99,34 @@ def editar_articulo(request, id):
     return HttpResponse(f"Articulo Editado: {articulo.id} - <strong> {articulo.title} </strong> - {articulo.content}")
 
 def articulos(request):
-    #articulos = Article.objects.all()
+    
     #articulos = Article.objects.order_by('title')
     #articulos = Article.objects.order_by('-title')
     #articulos = Article.objects.order_by('id')[:3]
-    articulos = Article.objects.order_by('id')[3:7]
+    #articulos = Article.objects.order_by('id')[3:7]
+    #articulos = Article.objects.filter(title="Batman", id=8)
+    #articulos = Article.objects.filter(title="Batman")
+    #articulos = Article.objects.filter(title__exact='articulo')
+    #articulos = Article.objects.filter(title__iexact='articulo')
+    #articulos = Article.objects.filter(id__gt = 5) --Mayor que
+    #articulos = Article.objects.filter(id__gte = 5) --Mayor o igual que
+    #articulos = Article.objects.filter(id__lt = 5) --Menor que
+    #articulos = Article.objects.filter(id__lte = 5) --Menor o igual que
+    #articulos = Article.objects.filter(id__lte = 5 title__containst = 'articulo') 
+    #articulos = Article.objects.filter(title__contains='articulo')
+    #articulos = Article.objects.all()
+    #articulos = Article.objects.filter(title="Batman").exclude(public = True)
+    articulos = Article.objects.raw("Select * from miapp_article")
 
     return render(request, 'articulos.html', {
         'articulos': articulos
     })
+
+def borrar_articulo(request, id):
+    articulo = Article.objects.get(pk=id)
+    articulo.delete()
+
+    return redirect('articulos')
 
     
 

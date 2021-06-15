@@ -96,9 +96,18 @@ def editar_articulo(request, id):
 
     articulo.save()
 
-    return HttpResponse(f"Articulo Editado: <strong> {articulo.title} </strong> - {articulo.content}")
+    return HttpResponse(f"Articulo Editado: {articulo.id} - <strong> {articulo.title} </strong> - {articulo.content}")
 
+def articulos(request):
+    #articulos = Article.objects.all()
+    #articulos = Article.objects.order_by('title')
+    #articulos = Article.objects.order_by('-title')
+    #articulos = Article.objects.order_by('id')[:3]
+    articulos = Article.objects.order_by('id')[3:7]
 
+    return render(request, 'articulos.html', {
+        'articulos': articulos
+    })
 
     
 

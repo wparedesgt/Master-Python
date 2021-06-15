@@ -33,6 +33,7 @@ urlpatterns = [
     path('crear-articulo/<str:title>/<str:content>/<str:public>', miapp.views.crear_articulo, name='crear_articulo'),
     path('articulo/', miapp.views.articulo, name = "articulo"),
     path('editar-articulo/<int:id>',miapp.views.editar_articulo),
+    path('articulos/', miapp.views.articulos),
 ]
 
 

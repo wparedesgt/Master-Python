@@ -1,3 +1,4 @@
+from django.http import response
 from django.shortcuts import render, HttpResponse , redirect
 from miapp.models import Article, Category
 
@@ -75,6 +76,27 @@ def crear_articulo(request, title, content, public):
 
     articulo.save()
     return HttpResponse(f"Articulo Creado: <strong> {articulo.title} </strong> - {articulo.content}")
+
+def articulo(request):
+
+    try:
+        articulo = Article.objects.get(title="Superman", public = True)
+        response = f"Articulo: <br/> {articulo.id}.{articulo.title}"
+    except:
+        response = "<h1> Articulo no Encontrado </h1>"
+
+    return HttpResponse(response)
+
+def editar_articulo(request, id):
+    articulo = Article.objects.get(pk=id)
+    
+    articulo.title = "Avengers"
+    articulo.content = "Marvel Movies"
+    articulo.public = True
+
+    articulo.save()
+
+    return HttpResponse(f"Articulo Editado: <strong> {articulo.title} </strong> - {articulo.content}")
 
 
 

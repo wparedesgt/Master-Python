@@ -1,6 +1,8 @@
 from django.http import response
 from django.shortcuts import render, HttpResponse , redirect
 from miapp.models import Article, Category
+from django.db.models import Q
+
 
 # Create your views here.
 #MVC = Modelo Vista Controlador -> (metodos)
@@ -117,6 +119,9 @@ def articulos(request):
     #articulos = Article.objects.all()
     #articulos = Article.objects.filter(title="Batman").exclude(public = True)
     articulos = Article.objects.raw("Select * from miapp_article")
+    #articulos = Article.objects.filter(
+    #    Q(title__contains = "2") | Q(title_contains = "3")
+    #)
 
     return render(request, 'articulos.html', {
         'articulos': articulos

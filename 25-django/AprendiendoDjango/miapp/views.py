@@ -2,6 +2,7 @@ from django.http import response
 from django.shortcuts import render, HttpResponse , redirect
 from miapp.models import Article, Category
 from django.db.models import Q
+from miapp.forms import FormArticle
 
 
 # Create your views here.
@@ -104,6 +105,37 @@ def save_article(request):
 def create_article(request):
 
     return render(request, 'create_article.html')
+
+
+def create_full_article(request):
+
+    if request.method == 'POST':
+        formulario = FormArticle(request.POST)
+
+        if formulario.is_valid():
+            data_form = formulario.cleaned_data
+
+            title = data_form.get('title')
+            content = data_form['content']
+            public = data_form['public']
+
+            articulo = Article(
+            title = title,
+            content = content,
+            public = public
+            )
+            articulo.save()
+
+            return HttpResponse(articulo.title + ' ' + articulo.content + ' ' + str(articulo.public))
+
+
+    else:
+        formulario = FormArticle()
+    
+    
+    return render(request, 'create_full_article.html', {
+        'form':formulario
+    })
 
 
 def articulo(request):

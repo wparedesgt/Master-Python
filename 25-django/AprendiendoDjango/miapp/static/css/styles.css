@@ -188,6 +188,19 @@ nav ul li a:hover{
 
 }
 
+.rojo{
+    color: red;
+    box-shadow: 0px 0px 4px black ;
+}
+
+.message{
+    padding: 20px;
+    background-color: #2ba977;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 .box form input[type="submit"]:hover,
 .box form input[type="button"]:hover,
 .box form button:hover{

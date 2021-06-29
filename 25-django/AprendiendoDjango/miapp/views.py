@@ -3,6 +3,7 @@ from django.shortcuts import render, HttpResponse , redirect
 from miapp.models import Article, Category
 from django.db.models import Q
 from miapp.forms import FormArticle
+from django.contrib import messages
 
 
 # Create your views here.
@@ -126,7 +127,15 @@ def create_full_article(request):
             )
             articulo.save()
 
-            return HttpResponse(articulo.title + ' ' + articulo.content + ' ' + str(articulo.public))
+            #Crear Mensaje Flash(Sesion que solo se muestra una vez)
+
+            messages.success(request, f'Se ha creado correctamente el articulo {articulo.id}')
+
+
+
+            return redirect('articulos') 
+
+            #return HttpResponse(articulo.title + ' ' + articulo.content + ' ' + str(articulo.public))
 
 
     else:

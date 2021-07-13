@@ -17,6 +17,11 @@
     margin-bottom: 10px;
 }
 
+.clearfix{
+    clear: both;
+    float: none;
+}
+
 body{
     background-color: #f2f2f2;
 }
@@ -217,6 +222,33 @@ nav ul li a:hover{
     margin-bottom: 10px;
     margin-top: 5px;
 
+}
+
+.article-item{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+    clear: both;
+
+}
+
+.article-item .image{
+    width: 200px;
+    height: 200px;    
+    float: left;
+    overflow: hidden;
+
+}
+
+.article-item .image img{
+    height: 200px;
+
+}
+
+.article-item .data{
+    float: left;
+    padding: 15px;
 }
 
 footer{

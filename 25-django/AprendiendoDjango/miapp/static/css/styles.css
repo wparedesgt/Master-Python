@@ -225,6 +225,7 @@ nav ul li a:hover{
 }
 
 .article-item{
+    display: block;
     margin-bottom: 20px;
     margin-top: 20px;
     border-bottom: 1px solid #eee;
@@ -234,6 +235,7 @@ nav ul li a:hover{
 }
 
 .article-item .image{
+    display: block;
     width: 200px;
     height: 200px;    
     float: left;
@@ -242,13 +244,43 @@ nav ul li a:hover{
 }
 
 .article-item .image img{
+    display: block;
     height: 200px;
 
 }
 
 .article-item .data{
+    display: block;
     float: left;
     padding: 15px;
+    padding-top: 0px;
+}
+
+.article-item h2{
+    display: block;
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 10px;
+
+}
+
+.article-item span.date{
+    display: block;
+    font-size: 15px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.btn{
+    padding: 10px;
+    background-color: rgb(223, 96, 96);
+    color: white;
+    border: 1px solid black;
+    display: block;
+    margin-top: 20px;
+    width: 100px;
+    text-align: center;
+
 }
 
 footer{

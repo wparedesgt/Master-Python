@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-v^mlmfr81=5)nzhc_f6dk8^*#)cawo(c(pouwv)(l=1nt)851#'
+SECRET_KEY = 'django-insecure-+zz#(6z)rzc-p%d9lk#!4ur-2r_i!_tf1ajdf2hn$%g&m%!f54'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,7 +47,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'mainapp',
 ]
 
 ROOT_URLCONF = 'ProyectoWP.urls'

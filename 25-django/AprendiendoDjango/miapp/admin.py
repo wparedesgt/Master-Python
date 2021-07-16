@@ -8,3 +8,12 @@ from .models import Article, Category
 
 admin.site.register(Article)
 admin.site.register(Category)
+
+
+#Configurar el titulo del panel 
+
+title = "Master en Pyton - William Paredes"
+
+admin.site.site_header = title
+admin.site.site_title = title
+admin.site.index_title = "Panel de Gestion"

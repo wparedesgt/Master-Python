@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.base import Model
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -21,7 +22,16 @@ class Article(models.Model):
     content = RichTextField(verbose_name= 'Contenido')
     image = models.ImageField(default= 'null', verbose_name='Imagen')
     public= models.BooleanField(verbose_name='Publicado?')
+    user = models.ForeignKey(User, verbose_name='Usuario', on_delete=models.CASCADE)
+    categories= models.ManyToManyField(Category, verbose_name='Categorias', null=True, blank=True)
     created_at= models.DateTimeField(auto_now_add=True, verbose_name='Creado el')
     updated_at= models.DateTimeField(auto_now=True, verbose_name='Modificado el')
-    
+
+    class Meta:
+        verbose_name = 'Articulo'
+        verbose_name_plural = 'Articulos'
+
+    def __str__(self) -> str:
+        return self.name
+
 

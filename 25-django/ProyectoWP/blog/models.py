@@ -32,6 +32,6 @@ class Article(models.Model):
         verbose_name_plural = 'Articulos'
 
     def __str__(self) -> str:
-        return self.name
+        return self.title
 
 

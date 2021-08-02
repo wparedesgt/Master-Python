@@ -22,7 +22,7 @@ class Article(models.Model):
     content = RichTextField(verbose_name= 'Contenido')
     image = models.ImageField(default= 'null', verbose_name='Imagen')
     public= models.BooleanField(verbose_name='Publicado?')
-    user = models.ForeignKey(User, verbose_name='Usuario', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, verbose_name='Usuario', editable=False, on_delete=models.CASCADE)
     categories= models.ManyToManyField(Category, verbose_name='Categorias', blank=True)
     created_at= models.DateTimeField(auto_now_add=True, verbose_name='Creado el')
     updated_at= models.DateTimeField(auto_now=True, verbose_name='Modificado el')

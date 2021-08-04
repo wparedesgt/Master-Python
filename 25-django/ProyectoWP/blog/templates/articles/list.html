@@ -16,9 +16,20 @@
             <div class="data">
 
                 <h2> {{article.title}}</h2>
-                <span class="date">{{article.created_at}}</span>
                 <p>
-                    {{article.content}}
+                    {%for category in article.categories.all%}
+
+                        {{category}}
+
+                    {%endfor%}
+
+                </p>
+                <span class="date">
+                {{article.user.first_name}} {{article.user.last_name}}
+                |
+                {{article.created_at}}</span>
+                <p>
+                    {{article.content|safe}}
                   
                 </p>
             </div>

@@ -19,7 +19,11 @@
                 <p>
                     {%for category in article.categories.all%}
 
-                        {{category}}
+                        <a href="#"> {{category}} </a>
+
+                        {%if forloop.counter < article.categories.all|length%}
+                                {{'-'}}
+                        {% endif %}
 
                     {%endfor%}
 

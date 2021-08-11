@@ -1,7 +1,11 @@
-def get_pages(request):
+from blog.models import Category, Article
 
-    pages = Page.objects.filter(visible = True).order_by('order').values_list('id', 'title', 'slug')
+def get_categories(request):
+
+    categories_in_use = Article.objects.filter(public= True).values_list('categories', flat=True)
+    categories = Category.objects.filter(id__in=categories_in_use).values_list('id', 'name')
 
     return {
-        'pages': pages
+        'categories': categories,
+        'ids': categories_in_use
     }

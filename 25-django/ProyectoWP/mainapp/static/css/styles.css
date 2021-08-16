@@ -198,6 +198,17 @@ nav > ul > li:hover > ul > li:hover a{
 
 }
 
+.box .image{
+    width: 45%;
+    float: left;
+    margin-right: 40px;
+
+}
+
+.box .image img {
+    width: 100%;
+}
+
 .box a{
     color: #444;
     transition: all 300ms;
